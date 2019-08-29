@@ -8,10 +8,10 @@ For example, given [9, 11, 8, 5, 7, 10], you should return 5, since you could bu
 
 const buyLowSellHigh = (yourArray) => {
   let minPos = yourArray.indexOf(Math.min(...yourArray))
-  console.log(minPos)
   let temp = yourArray.slice(minPos)
-  console.log(temp)
+  console.log('min = ', temp[0], 'located at index ', minPos)
   let max = Math.max(...temp);
+  console.log('max = ', max)
   return max-temp[0]
 }
 
@@ -23,7 +23,7 @@ $(document).ready(function() {
     event.preventDefault()
     let input0 = $('#input-section-0').val()
     console.log(input0)
-    $('#output-section-0').text(1)
-    $('#output-section-1').text(2)
+    let input1 = JSON.parse(input0)
+    $('#output-section-0').text(buyLowSellHigh(input1))
   })
 });

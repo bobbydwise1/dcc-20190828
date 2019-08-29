@@ -11,12 +11,13 @@ const buyLowSellHigh = (yourArray) => {
   let temp = yourArray.slice(minPos)
   console.log('min = ', temp[0], 'located at index ', minPos)
   let max = Math.max(...temp);
-  console.log('max = ', max)
+  let maxPos = temp.indexOf(Math.max(...temp))
+  console.log('max = ', max, 'located at index ', yourArray.length - temp.length + maxPos)
   return max-temp[0]
 }
 
-let test0 = [9, 11, 8, 5, 7, 10]
-console.log(buyLowSellHigh(test0))
+// let test0 = [9, 11, 8, 5, 7, 10]
+// console.log(buyLowSellHigh(test0))
 
 $(document).ready(function() {
   $('#form1').submit(function(event){

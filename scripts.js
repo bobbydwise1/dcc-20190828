@@ -7,10 +7,12 @@ For example, given [9, 11, 8, 5, 7, 10], you should return 5, since you could bu
 */
 
 const buyLowSellHigh = (yourArray) => {
-  let min = Math.min(...yourArray);
-  console.log(min)
-  let max = Math.max(...yourArray);
-  console.log(max)
+  let minPos = yourArray.indexOf(Math.min(...yourArray))
+  console.log(minPos)
+  let temp = yourArray.slice(minPos)
+  console.log(temp)
+  let max = Math.max(...temp);
+  return max-temp[0]
 }
 
 let test0 = [9, 11, 8, 5, 7, 10]

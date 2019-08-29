@@ -6,6 +6,15 @@ Given a array of numbers representing the stock prices of a company in chronolog
 For example, given [9, 11, 8, 5, 7, 10], you should return 5, since you could buy the stock at 5 dollars and sell it at 10 dollars.
 */
 
+const buyLowSellHigh = (yourArray) => {
+  let min = Math.min(...yourArray);
+  console.log(min)
+  let max = Math.max(...yourArray);
+  console.log(max)
+}
+
+let test0 = [9, 11, 8, 5, 7, 10]
+console.log(buyLowSellHigh(test0))
 
 $(document).ready(function() {
   $('#form1').submit(function(event){

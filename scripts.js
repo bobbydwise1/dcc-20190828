@@ -13,7 +13,7 @@ const buyLowSellHigh = (yourArray) => {
   let max = Math.max(...temp);
   let maxPos = temp.indexOf(Math.max(...temp))
   console.log('max = ', max, 'located at index ', yourArray.length - temp.length + maxPos)
-  return max-temp[0]
+  return [max-temp[0], temp[0], minPos, max, yourArray.length - temp.length + maxPos]
 }
 
 // let test0 = [9, 11, 8, 5, 7, 10]
@@ -25,6 +25,11 @@ $(document).ready(function() {
     let input0 = $('#input-section-0').val()
     console.log(input0)
     let input1 = JSON.parse(input0)
-    $('#output-section-0').text(buyLowSellHigh(input1))
+    let output0 = buyLowSellHigh(input1)
+    $('#output-section-0').text('$'+output0[0])
+    $('#output-section-1').text('$'+output0[1])
+    $('#output-section-2').text(output0[2])
+    $('#output-section-3').text('$'+output0[3])
+    $('#output-section-4').text(output0[4])
   })
 });
